@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-  if(!isset($_SESSION['fname']))
+ if(!isset($_SESSION['fname']))
   {
       //User not logged in. Redirect back to login page
       header('Location: adminLogin.php');
@@ -47,6 +47,7 @@ and open the template in the editor.
                 <td>ID Number</td>
                 <td>Phone Number</td>
                 <td>Email</td>
+                <td>Date</td>
                 
             </tr>
             </thead>
@@ -63,7 +64,7 @@ and open the template in the editor.
               die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT id, firstname, lastname, timeSlot, idNum, phoneNum, email FROM appointments";
+            $sql = "SELECT id, firstname, lastname, timeSlot, idNum, phoneNum, email, date FROM appointments";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -80,6 +81,7 @@ and open the template in the editor.
                 <td><?php echo  $row["idNum"]; ?></td>
                 <td><?php echo  $row["phoneNum"]; ?></td>
                 <td><?php echo  $row["email"]; ?></td>
+                <td><?php echo  $row["date"]; ?></td>
                 
             </tr>
             </tbody>
@@ -87,7 +89,8 @@ and open the template in the editor.
               <?php
                 }
             } else {
-              echo "0 results";
+              echo "<script>alert('No results found.');</script>";
+              echo "<script>window.location.href='adminView.php'</script>";
             }
             $conn->close();
          ?>
@@ -103,7 +106,7 @@ and open the template in the editor.
                }?></h4>
         
         <form action="" method="POST">
-            <input class="search" type="text" name="lastname" placeholder="Enter the last name" required="true" />
+            <input class="search" type="text" name="idNum" placeholder="Enter the ID number" required="true" />
             <button class="submit" name="search">Search</button>
         </form>
         
@@ -114,9 +117,9 @@ and open the template in the editor.
         $db = mysqli_select_db($conn, 'healthcare');
         
         if(isset($_POST['search'])){
-            $lastname = $_POST['lastname'];
-            
-            $query = "SELECT * FROM appointments where lastname = '$lastname' ";
+            $idNum = $_POST['idNum'];
+            $_SESSION['idNum'] = $idNum;
+            $query = "SELECT * FROM appointments where idNum = '$idNum' ";
             $query_run = mysqli_query($conn, $query);
             
             while($row = mysqli_fetch_array($query_run)){
@@ -130,20 +133,27 @@ and open the template in the editor.
                 <td>ID Number</td>
                 <td>Phone Number</td>
                 <td>Email</td>
+                <td>Date</td>
             </tr>
             </thead>
             
             <tbody>
             <tr>
-            <td><?php echo  $row["id"]; ?></td>
+                <td><?php echo  $row["id"]; ?></td>
                 <td><?php echo  $row["firstName"]; ?></td>
                 <td><?php echo  $row["lastName"]; ?></td>
                 <td><?php echo  $row["timeSlot"]; ?></td>
                 <td><?php echo  $row["idNum"]; ?></td>
                 <td><?php echo  $row["phoneNum"]; ?></td>
                 <td><?php echo  $row["email"]; ?></td>
+                <td><?php echo  $row["date"]; ?></td>
             </tr>
             </tbody>
+            <tfoot> 
+                <tr>
+                    <td colspan = 5> <form><button type="submit" class="delete" name="delete">Delete</button></form><br></td>
+                </tr>
+            </tfoot>
              
              <?php
                 
@@ -151,25 +161,31 @@ and open the template in the editor.
         }
         
         if(isset($_POST['delete'])){
-            $id = $_POST['idNum'];
+            
+            $idNum = $_SESSION['idNum'];
+            
             // sql to delete a record
-    $sql = "DELETE FROM appointments WHERE lastname=$lastname";
+            $sql = "DELETE FROM appointments WHERE idNum=$idNum";
 
-      if ($conn->query($sql) === TRUE) {
-  echo "Record deleted successfully";
-} else {
-  echo "Error deleting record: " . $conn->error;
-}
-
-$conn->close();
+            if ($conn->query($sql) === TRUE) {
+                echo "Record deleted successfully";
+            } else {
+               echo "Error deleting record: " . $conn->error;
+            }
         }
+            $conn->close();
         ?>
         
         </table>
+       
         
-        <p class="link" align="center"><a href="adminLogin.php">Sign out</a>.</p>
+        <p class="link" align="center"><a href="adminLogin.php">Sign out</a></p>
            
-           </div>  
+           </div> 
+        <br>
     </body>
+    <footer>
+    <h4 align="right" style="padding-right: 20px; font-size: 10px;"><i>Created by Loy Netshiozwi</i></h4>
+</footer>
 </html>
 <?php } ?>

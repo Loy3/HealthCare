@@ -1,8 +1,19 @@
    body {
         background-color: #e7f7ff;
         font-family: Georgia, "Times New Roman", serif;
-        
     }
+    
+    h1, h2 {
+        background-color: #e7f7ff;
+    }
+    
+    footer{
+        background-color: #416d65;
+        color: #FFFFFF;
+         padding-top: 10px;
+          padding-bottom: 10px;          
+    }
+
     
     .main {
         background-color: #FFFFFF;
@@ -10,8 +21,7 @@
         height: 450px;
         margin: 8em auto;
         border-radius: 1em;
-        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-        
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);   
     }
     
     .mainSignUp {
@@ -21,8 +31,6 @@
         margin: 8em auto;
         border-radius: 2em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-        
-        
     }
     
      .mainApp {
@@ -32,15 +40,12 @@
         margin: 8em auto;
         border-radius: 2em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-        
-        
     }
     
     .sign {
         padding: 20px;
         color: #416d65;
         font-family: Georgia, "Times New Roman", serif;
-        
         font-size:50px;
     }
     
@@ -48,7 +53,6 @@
         padding: 20px;
         color: #416d65;
         font-family: Georgia, "Times New Roman", serif;
-        
         font-size:20px;
     }
     
@@ -56,7 +60,6 @@
         padding: 20px;
         color: #416d65;
         font-family: Georgia, "Times New Roman", serif;
-        
         font-size:30px;
     }
     
@@ -127,7 +130,6 @@
    
     .un:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
     }
     
     .submit {
@@ -162,6 +164,55 @@
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
     
+     .resetLog {
+         cursor: pointer;
+        border-radius: 5em;
+        color: #000;
+        background-color: #ff888e;
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Georgia, "Times New Roman", serif;
+        margin-left: 85px;
+        font-size: 18px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+     .delete {
+         cursor: pointer;
+        border-radius: 5em;
+        color: #000;
+        background-color: #ff888e;
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Georgia, "Times New Roman", serif;
+      
+        font-size: 18px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .noBtn {
+         cursor: pointer;
+        border-radius: 5em;
+        color: #000;
+        background-color: #ff888e;
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Georgia, "Times New Roman", serif;
+        margin-left: 80px;
+        font-size: 18px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    
     .link {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color: #000;
@@ -170,7 +221,6 @@
     
     a {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        
         text-decoration: none
     }
     
@@ -180,19 +230,7 @@
         }
     }
     
-    h1, h2 {
-        background-color: #e7f7ff;
-     
-    }
     
-    footer{
-        background-color: #416d65;
-        color: #FFFFFF;
-         padding-top: 10px;
-          padding-bottom: 10px;
-          
-    }
-
     #wrapper {margin-left: auto;
           margin-right: auto;
           background-color: #FFFFFF;
@@ -201,6 +239,7 @@
           box-shadow: 3px 3px 3px 3px #333;
           background-color: #FFFFFF;
           padding-bottom: 20px;
+          padding-left: 10px;
           
        
 }
@@ -208,7 +247,6 @@
 
 table{border: 1px solid #000000;
 	border-collapse: collapse;
-
 }
 
 td {border: 2px solid #FFF;

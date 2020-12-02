@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>You are well</title>
+    <title>More Information</title>
     <link rel = "stylesheet" href = "style.css">
   </head>
   <header>
@@ -11,11 +11,9 @@
 </header>
   <body>
       <div id="wrapper">
-<h1>Infomation</h1>
+<h1 class="sign" align="center">Infomation</h1>
 
-<p>Since you show no signs of the virus that means you can stay at home and rest before going out.</p>
-
-<h3> Here are some of the things you should take to consideration...</h3>
+<h3 align="center"> Here are some of the things you should take into consideration...</h3>
 <table align="center">
     
         <tr>
@@ -42,11 +40,15 @@
         </tr>
     
 </table>
+    
+<br>
+<p class="link" align="center"><a href="index.php">Sign out</a>.</p>
 
 </div>
       <br>
   </body>
   <footer>
-    <p align="center" >For more infomation contact the Health Care Service Centre at <br><br>Tel: 012 494 4410 <br><br>You Can WhatsApp Us At: +2779 802 5585 <br><br>Or Email: healthCareServiceCentre@care.org </p>
+    <p align="center" >For more infomation contact the Health Care Service Centre at <br><br>Tel: 012 494 4410 <br><br>You Can WhatsApp Us At: +27 79 802 5585 <br><br>Or Email: healthCareServiceCentre@care.org </p>
+    <h4 align="right" style="padding-right: 20px; font-size: 10px;"><i>Created by Loy Netshiozwi</i></h4>
 </footer>
 </html>

@@ -70,7 +70,8 @@ if(isset($_POST['submit'])){
     
 
     if(mysqli_query($link, $sql)){
-        echo "Records added successfully.";
+        echo "<script>alert('Records added successfully, now you can sign out below.');</script>";
+        header("Location:consider.php");
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     }
@@ -126,25 +127,30 @@ if(isset($_POST['submit'])){
       <h4 align="center">Email:</h4><br>
       <input class="un" type="email" placeholder="Enter Email" name="email" required><br>
 
-      <button class="submit" type="submit" name="submit">Book</button><br><br>
-   <button type="reset" class="reset" name="reset">Reset</button><br><br>
-   <p class="link" align="center"><a href="negativeResults.php">Sign out</a>.</p>
+      <button class="submit" type="submit" name="submit">Book</button>
+      <button type="reset" class="reset" name="reset">Reset</button><br><br>
+      
+      
 
   
-   <h4>
+        <h4>
         <?php   if(isset($_POST['submit']))
-  {           
-         echo (!empty($correct)) ? 'has-error' : '';
-  }?></h4>
+             {           
+             echo (!empty($correct)) ? 'has-error' : '';
+        }?></h4>
             
  
       
   
-</form>
+        </form>
+        <p class="link" align="center"><a href="consider.php">Sign out</a>.</p>
+        
         </div>
+        <br>
     
 </body>
 <footer>
-    <p align="center" >For more infomation contact the Health Care Service Centre at <br><br>Tel: 012 494 4410 <br><br>You Can WhatsApp Us At: +2779 802 5585 <br><br>Or Email: healthCareServiceCentre@care.org </p>
+    <p align="center" >For more infomation or if you wish to cancel an appointment contact the Health Care Service Centre at <br><br>Tel: 012 494 4410 <br><br>You Can WhatsApp Us At: +27 79 802 5585 <br><br>Or Email: healthCareServiceCentre@care.org </p>
+    <h4 align="right" style="padding-right: 20px; font-size: 10px;"><i>Created by Loy Netshiozwi</i></h4>
 </footer>
 </html>

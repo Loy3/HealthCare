@@ -18,13 +18,13 @@ $sql=$userdata->registration($uname,$uemail,$pasword);
 if($sql)
 {
 // Message for successfull insertion
-echo "Registration successfull.";
+echo "<script>alert('Registration successfull..');</script>";
 echo "<script>window.location.href='adminLogin.php'</script>";
 }
 else
 {
 // Message for unsuccessfull insertion
-echo "Something went wrong. Please try again";
+echo "<script>alert('Something went wrong. Please try again');</script>";
 echo "<script>window.location.href='adminReg.php'</script>";
 }
 } else {
@@ -74,4 +74,8 @@ echo "<script>window.location.href='adminReg.php'</script>";
     <p class="link" align="center">Already registered <a href="adminLogin.php">Sign in</a></p>
  </div>
 </body>
+
+<footer>
+    <h4 align="right" style="padding-right: 20px; font-size: 10px;"><i>Created by Loy Netshiozwi</i></h4>
+</footer>
 </html>

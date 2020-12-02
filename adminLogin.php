@@ -1,31 +1,30 @@
 <?php
-session_start();
-// include Function  file
-include_once('function.php');
-// Object creation
-$usercredentials=new DB_con();
-if(isset($_POST['signin']))
-{
-// Posted Values
-$uname=$_POST['username'];
-$pasword=$_POST['password'];
-//Function Calling
-$ret=$usercredentials->signin($uname,$pasword);
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-  $_SESSION['uid']=$num['id'];
-  $_SESSION['fname']=$num['username'];
-// For success
-echo "<script>window.location.href='adminView.php'</script>";
-}
-else
-{
-// Message for unsuccessfull login
-echo "<script>alert('Invalid details. Please try again');</script>";
-echo "<script>window.location.href='adminReg.php'</script>";
-
-}
+    session_start();
+    // include Function  file
+    include_once('function.php');
+    // Object creation
+    $usercredentials=new DB_con();
+    if(isset($_POST['signin']))
+    {
+        // Posted Values
+        $uname=$_POST['username'];
+        $pasword=$_POST['password'];
+        //Function Calling
+        $ret=$usercredentials->signin($uname,$pasword);
+        $num=mysqli_fetch_array($ret);
+    if($num>0)
+    {
+      $_SESSION['uid']=$num['id'];
+      $_SESSION['fname']=$num['username'];
+      // For success
+      echo "<script>window.location.href='adminView.php'</script>";
+    }
+    else
+    {
+        // Message for unsuccessfull login
+        echo "<script>alert('Invalid details. Please try again');</script>";
+        echo "<script>window.location.href='adminReg.php'</script>";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -51,20 +50,16 @@ echo "<script>window.location.href='adminReg.php'</script>";
     <h4 align="center">Password</h4><br>
     <input class="pass" type="password" placeholder="Enter Password" name="password" required><br>
 
-   <button class="submit" type="submit" name="signin">Sign In</button> 
-   <button type="reset" class="reset" name="reset">Reset</button><br>
-   
-   <br>
+    <button class="submit" type="submit" name="signin">Sign In</button><br><br>
    
    <p class="link" align="center">Not registered yet? <a href="adminReg.php"> Register here</a>.</p>
   </div>
   
 </form>
-    
-    
-    
-
 </body>
+<footer>
+    <h4 align="right" style="padding-right: 20px; font-size: 10px;"><i>Created by Loy Netshiozwi</i></h4>
+</footer>
 </html>
 
 
